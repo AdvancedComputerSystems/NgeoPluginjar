@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+DownloaderProcessClass: it.acsys.ngeoplugin.IDownloadProcessImpl
+DownloaderClass: it.acsys.ngeoplugin.URIDownloader
+Class-Path: NgeoPluginjar.jar
