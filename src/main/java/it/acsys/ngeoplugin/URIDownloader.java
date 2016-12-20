@@ -389,6 +389,28 @@ public class URIDownloader implements IDownloadPlugin {
 	    			downloadListener.progress(0,0l, EDownloadStatus.IN_ERROR, errorMessage, 
 				  	        		new UnexpectedResponseException(errorMessage));
 		    		break;
+		    	case 401:
+		    		body = new String(response.getBody());
+		    		errorMessage = extractErrorMessage(body, "/MissingProductResponse");
+		    		
+	    			if(errorMessage.equals("")) {
+	    				errorMessage = "Authorization required: 401";
+	    			}
+	    			
+	    			downloadListener.progress(0,0l, EDownloadStatus.IN_ERROR, errorMessage, 
+				  	        		new UnexpectedResponseException(errorMessage));
+		    		break;
+		    	case 403:
+		    		body = new String(response.getBody());
+		    		errorMessage = extractErrorMessage(body, "/MissingProductResponse");
+		    		
+	    			if(errorMessage.equals("")) {
+	    				errorMessage = "Access forbidden: 403";
+	    			}
+	    			
+	    			downloadListener.progress(0,0l, EDownloadStatus.IN_ERROR, errorMessage, 
+				  	        		new UnexpectedResponseException(errorMessage));
+		    		break;
 		    	default:
 		    		body = new String(response.getBody());
 		    		errorMessage = extractErrorMessage(body, "/BadRequestResponse");
@@ -463,6 +485,9 @@ public class URIDownloader implements IDownloadPlugin {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		log.debug("PLUG IN RETURNING PROCESS " + process);
+		
 		return process;
 	}
 	

@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>it.acsys.ngeoplugin</groupId>
 	<artifactId>NgeoPluginjar</artifactId>
-	<version>0.0.18</version>
+	<version>0.0.21-SNAPSHOT</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -14,17 +14,17 @@
 	<distributionManagement>
 		<repository>
 			<id>ngeo-releases</id>
-			<url>http://ngeo-nexus.acsys.it:8082/nexus/content/repositories/releases</url>
+			<url>http://ngeo-nexus.acsys.it:8082/content/repositories/releases</url>
 		</repository>
 		<snapshotRepository>
 			<id>ngeo-snapshots</id>
-			<url>http://ngeo-nexus.acsys.it:8082/nexus/content/repositories/snapshots</url>
+			<url>http://ngeo-nexus.acsys.it:8082/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 	<repositories>
 		<repository>
 			<id>nexus</id>
-			<url>http://ngeo-nexus.acsys.it:8082/nexus/content/groups/public</url>
+			<url>http://ngeo-nexus.acsys.it:8082/content/groups/public</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
